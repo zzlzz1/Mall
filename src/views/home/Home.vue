@@ -15,7 +15,10 @@
 		name: "Home",
 		data() {
 			return {
-				result: null
+				banners: [],
+				dkeywords: [],
+				keyworkds: [],
+				recommends: []
 			}
 		},
 		components: {
@@ -23,8 +26,10 @@
 		},
 		created() {
 			getMultiData().then((res) => {
-				this.result = res;
-				console.log(this.result);
+				console.log(res);
+				this.banners = res.data.banner.list;
+				console.log(this.banners);
+				this.recommends = res.data.recommend.list;
 			});
 		}
 	}
