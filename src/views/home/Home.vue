@@ -10,15 +10,22 @@
  
 <script>
 	import NavBar from "components/common/navbar/NavBar";
+	import {getMultiData} from "network/home";
 	export default {
 		name: "Home",
 		data() {
 			return {
-				
+				result: null
 			}
 		},
 		components: {
 			NavBar
+		},
+		created() {
+			getMultiData().then((res) => {
+				this.result = res;
+				console.log(this.result);
+			});
 		}
 	}
 </script>
