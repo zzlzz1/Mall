@@ -6,13 +6,16 @@
 			</template>
 		</nav-bar>
 		<home-swiper :banners="banners"/>
-	</div>
+		<recommend-view :recommends= "recommends"/>
+	</div> 
 </template>
  
 <script>
 	import {getMultiData} from "network/home";
 	import NavBar from "components/common/navbar/NavBar";
 	import HomeSwiper from "./childComps/HomeSwiper";
+	import RecommendView from "./childComps/RecommendView";
+	
 	export default {
 		name: "Home",
 		data() {
@@ -23,7 +26,8 @@
 		},
 		components: {
 			NavBar,
-			HomeSwiper
+			HomeSwiper,
+			RecommendView
 		},
 		created() {
 			getMultiData().then((res) => {
