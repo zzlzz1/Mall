@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<tab-bar>
+		<tab-bar class="tab-bar">
       <tab-bar-item path="/home">
         <!-- vue3插槽的写法 -->
         <template v-slot:item-icon>
@@ -51,5 +51,8 @@
 </script>
  
 <style scoped>
+  .tab-bar {
+    z-index: 9;
+  }
 	
 </style>
